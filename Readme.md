@@ -20,14 +20,13 @@ Az alkalmazás Nivelle város macskamentő egyesületének munkáját hivatott s
 - github repository klónozása a saját gépre
 - függőségek telepítése
     * backend: 
-        * terminálban belépés a KittySaver mappába
-        * '''npm i''' parancs futtatása
+        * terminálban '''npm i''' parancs futtatása
     * frontend:
-        * terminálban belépés a KittySaver, majd a frontend mappába
+        * terminálban belépés a frontend mappába
         * '''npm i''' parancs futtatása
 - ha még nincs angular keretrendszer a célgépen: '''npm install -g @angular/cli''' 
 - frontend mappában terminálban '''npm run build''' parancs
-- KittySaver mappában terminálban '''npm run start''' parancs
+- terminálban '''npm run start''' parancs
 VAGY
 - konténerizálva Docker segítségével - lásd: Az alkalmazás indítása
 
@@ -35,7 +34,7 @@ VAGY
 # Az alkalmazás indítása
 A megadott Docker konténer indítása és inicializálása
 - Docker Desktop alkalmazás elindítása
-- terminálban KittySaver mappában '''npm run docker-compose''' parancs
+- terminálban '''npm run docker-compose''' parancs
 - az alkalmazás megnyitása: böngészőben http://localhost:3000
 - a belépéshez jelszó-email példa:
     * email: proba@admin.hu
@@ -67,11 +66,11 @@ Bongészőben: http://localhost:3000/api/api-docs
 
 
 # Tesztek
-- Kittysaver mappában '''npm i''' parancs futtatása
+- terminálban '''npm i''' parancs futtatása
 - Integrációs tesztek futtatása:
-    * terminálban a KittySaver mappában '''npm run test:integration''' parancs futtatása
+    * terminálban '''npm run test:integration''' parancs futtatása
 - Unit tesztek futtatása:
-    * terminálban a KittySaver mappában '''npm run test:unit''' parancs futtatása
+    * terminálban '''npm run test:unit''' parancs futtatása
 
 
 # Entitások
