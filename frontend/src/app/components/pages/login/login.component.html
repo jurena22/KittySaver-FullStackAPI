@@ -1,0 +1,36 @@
+<main class="d-flex flex-column justify-content-center p-5">
+
+    <div class="container col-md-6 card p-3 shadow">
+        <form [formGroup]="loginForm" (ngSubmit)="submitLogin()" class="m-3" novalidate>
+    
+            <div *ngIf="email" class="form-floating mb-5 row">
+                <input formControlName="email" class="form-control" id="email" type="email"
+                    placeholder="Enter your email...">
+                <label for="email">Email address</label>
+                <div *ngIf="email.invalid && email.touched">
+                    <small *ngIf="email.errors?.['required']">An email is required.</small>
+                    <small *ngIf="email.errors?.['email']">Email is not valid.</small>
+                </div>
+            </div>
+    
+            <div *ngIf="password" class="form-floating my-5 row">
+                <input formControlName="password" class="form-control" type="password" id="password"
+                    placeholder="Enter your password...">
+                <label for="password">Password</label>
+                <small *ngIf="password.invalid && password.touched">A password is required.</small>
+            </div>
+    
+    
+            <div class="row col-md-3 mx-auto">
+                <button class="btn btn-dark text-uppercase" [disabled]="loginForm.invalid"
+                    id="loginButton" type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="text-center mt-5">
+        <p>You don't have an account yet? Click here to registrate.</p>
+        <button class="btn btn-dark btn-large" (click)="goToRegistration()">Go to registration</button>
+    </div>
+
+</main>

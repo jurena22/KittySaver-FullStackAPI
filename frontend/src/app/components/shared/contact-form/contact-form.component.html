@@ -1,0 +1,31 @@
+<section>
+    <div class="container-md p-3">
+        <div class="shadow-lg py-3 px-5">
+            <form #messageForm="ngForm" (ngSubmit)="saveMessage(messageForm)" class="d-flex flex-column justify-content-between">
+                <div class="mb-3">
+                  <label for="senderInput" class="form-label">Your email:</label>
+                  <input type="text" readonly class="form-control-plaintext" id="senderInput" [value]="user?.email" disabled #sender>
+                </div>
+
+                <div class="mb-3">
+                    <label for="messageText" class="form-label">Your message:</label>
+                    <textarea class="form-control" id="messageText" rows="5"
+                    #messageInput="ngModel" name="messageText" [(ngModel)]="newMessage.messageText" required></textarea>
+                    <small *ngIf="messageInput.invalid && messageInput.dirty">Missing message</small>
+                </div>
+
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="rules" aria-describedby="rulesHelp"
+                  #rulesCheckbox="ngModel" name="rules" [(ngModel)]="newMessage.rules" [required]="true">
+                  <label class="form-check-label" for="rules">I've read and I accept the rules.</label>
+                  <div id="rulesHelp" class="form-text">By sending your message, you accept that you won't be able to edit it.</div>
+                  <small *ngIf="rulesCheckbox.invalid && rulesCheckbox.dirty">Please accept rules.</small>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-outline-light my-2" [disabled]="messageForm.invalid || !sender.value">Send message</button>
+                </div>
+              </form>
+        </div>
+    </div>
+</section>

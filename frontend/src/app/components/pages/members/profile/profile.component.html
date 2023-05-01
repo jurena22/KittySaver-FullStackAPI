@@ -1,0 +1,22 @@
+<section>
+    <div class="container-md p-3">
+        <div class="shadow-lg py-3 px-5">
+            <div *ngIf="user" class="d-flex flex-column justify-content-evenly">
+                <h2 class="text-large text-center mt-1 mb-4">{{user.name}}</h2>
+                <p>First Name: {{user.name.split(" ")[0]}}</p>
+                <p>Last Name: {{user.name.split(" ")[1]}}</p>
+                <p>Phone Number: {{user.phoneNumber}}</p>
+                <p>Address: {{user.address}}</p>
+                <p>Email address: {{ user.email}}</p>
+                
+                <div class="text-center my-3">
+                    <button id="updateButton" type="submit" class="btn btn-dark" (click)="updateProfile()">Edit profile</button>
+                </div>
+
+                <div class="text-center my-3">
+                    <button type="submit" class="btn btn-outline-dark btn-large" (click)="logout()">Logout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

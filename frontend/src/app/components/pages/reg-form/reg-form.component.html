@@ -1,0 +1,90 @@
+<main>
+  <app-hero
+    backgroundUrl="https://images.unsplash.com/photo-1487300001871-12053913095d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fGNhdHxlbnwwfDB8MHx8&auto=format&fit=crop&w=600&q=60"
+    titleText="Join us. Be a member."></app-hero>
+
+  <section id="form" class="p-5 pt-4">
+
+    <h1 class="pb-3 text-center">Registrate here</h1>
+
+    <section class="card border rounded shadow m-3 p-3">
+      <form *ngIf="memberRegForm" [formGroup]="memberRegForm" (ngSubmit)="saveMember()">
+        <div class="row row-cols-1 row-cols-md-2">
+          <div class="col mb-3">
+            <label for="firstNameInput" class="form-label">First Name: </label>
+            <input type="text" class="form-control" id="firstNameInput" formControlName="firstName">
+            <small *ngIf="firstName.invalid && firstName.touched">First name is required.</small>
+          </div>
+
+          <div class="col mb-3">
+            <label for="lastNameInput" class="form-label">Last Name: </label>
+            <input type="text" class="form-control" id="lastNameInput" formControlName="lastName">
+            <small *ngIf="lastName.invalid && lastName.touched">Last name is required.</small>
+          </div>
+
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-2">
+          <div class="col mb-3">
+            <label for="emailInput" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="emailInput" formControlName="email">
+            <small *ngIf="email.invalid && email.touched">Email is required.</small>
+          </div>
+
+          <div class="col mb-3">
+            <label for="phoneNumberInput" class="form-label">Phone Number: </label>
+            <input type="text" class="form-control" id="phoneNumberInput" formControlName="phoneNumber">
+            <small *ngIf="phoneNumber.invalid && phoneNumber.touched">Phone number is required.</small>
+          </div>
+        </div>
+
+
+        <div class="row row-cols-1 row-cols-md-2">
+          <div class="col mb-3">
+            <label for="cityInput" class="form-label">City: </label>
+            <input type="text" class="form-control" id="cityInput" formControlName="city">
+            <small *ngIf="city.invalid && city.touched">City is required.</small>
+          </div>
+
+          <div class="col mb-3">
+            <label for="addressInput" class="form-label">Address: </label>
+            <input type="text" class="form-control" id="addressInput" formControlName="address">
+            <small *ngIf="address.invalid && address.touched">Address is required.</small>
+          </div>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-2">
+          <div class="col mb-3">
+            <label for="passwordInput1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="passwordInput1" formControlName="password">
+            <small *ngIf="password.invalid && password.touched">Password is required.</small>
+          </div>
+
+          <div class="col mb-3">
+            <label for="confirmPasswordInput" class="form-label">Repeat your password</label>
+            <input type="password" class="form-control" id="confirmPasswordInput" formControlName="confirmPassword">
+            <small *ngIf="memberRegForm.errors?.['checkPasswords'] && (confirmPassword.invalid || confirmPassword.dirty)">Password fields are differnt.</small>
+            
+          </div>
+        </div>
+
+
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="rulesCheckBox" formControlName="rulesAccepted">
+          <label class="form-check-label" for="rulesCheckBox">I accept the terms of use.</label><br>
+          <small *ngIf="rules.invalid && rules.touched">You must accept the rules.</small>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-dark" [disabled]="memberRegForm.invalid">Registrate</button>
+        </div>
+
+      </form>
+    </section>
+
+    <div class="text-center mt-5">
+      <p>You already have an account? Click here to login.</p>
+      <button class="btn btn-dark btn-large" (click)="goToLogin()">Go to login page</button>
+  </div>
+  </section>
+</main>

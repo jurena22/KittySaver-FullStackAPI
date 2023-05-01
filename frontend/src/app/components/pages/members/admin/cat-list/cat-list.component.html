@@ -1,0 +1,40 @@
+<section class="p-5 pt-4">
+    <div class="d-flex flex-row justify-content-evenly">
+        <button class="btn btn-dark px-5" id="addBtn" (click)="goToCatForm()">Add a new cat</button>
+    </div>
+        
+    <div *ngIf="catsArray$" class="card border rounded shadow m-3 p-3 table-responsive-md">
+        <table class="table table-striped table-bordered table-sm">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Sex</th>
+                <th scope="col">Color</th>
+                <th scope="col">Description</th>
+                <th scope="col">Adoptable</th>
+                <th scope="col">Options</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let cat of catsArray$ | async; let i=index">
+                <th scope="row">{{ i+1 }}</th>
+                <td>
+                    {{ cat.name }}
+                    <br>
+                    <img [src]="cat.imgUrl" [alt]="cat.name" class="img-thumbnail" style="width: 10vw">
+                </td>
+                <td>{{ cat.sex }}</td>
+                <td>{{ cat.color }}</td>
+                <td>{{ cat.description }}</td>
+                <td>{{ cat.adoptable ? "YES" : "NO" }}</td>
+                <td>
+                    <button class="btn btn-dark m-3" (click)="editCat(cat._id!)" id="updateBtn">Edit</button>
+                    <button class="btn btn-outline-dark m-3" (click)="deleteCat(cat._id!)" id="deleteBtn">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+
+  </section>

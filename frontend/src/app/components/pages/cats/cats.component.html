@@ -1,0 +1,41 @@
+<main>
+    <app-hero
+        backgroundUrl="https://images.unsplash.com/photo-1535476593072-5a085be9f713?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+        titleText="Adopt a cat. Change a life."></app-hero>
+
+    <section id="searchBar">
+        <div class="container">
+            <form class="row pt-5 gx-5 pb-5" #searchForm='ngForm' (ngSubmit)="findCats(searchForm)">
+                <div class="col-md-4 mb-3">
+                    <label for="sexInput" class="form-label">Choose sex:</label>
+                    <select id="sexInput" class="form-select" ngModel name="sex" required>
+                        <option *ngFor="let prop of sexProp" [value]="prop">{{ prop }}</option>
+                    </select>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="colorInput" class="form-label">Choose color:</label>
+                    <select for="colorInput" class="form-select" ngModel name="color" required>
+                        <option *ngFor="let prop of colorProp" [value]="prop">{{ prop | titlecase }}</option>
+                    </select>
+                </div>
+                <div class="col-md-4 text-center mb-3 mt-4">
+                    <button class="btn btn-lg btn-dark px-5 py-1" [disabled]="searchForm.invalid">Search</button>
+                </div>
+            </form>
+
+        </div>
+    </section>
+
+    <section id="cats">
+        <div class="container" *ngIf="selectedCats && selectedCats.length !== 0; else elseBlock">
+            <app-card [cardElements]="selectedCats"></app-card>
+        </div>
+        <ng-template #elseBlock>
+            <div class="container p-5">
+                <h2 class="lead">Sorry, there is no cat with these parameters in out database.</h2>
+                <a class="fs-bold text-decoration-none text-uppercase custom-link" (click)="showAllCats()">Show all</a>
+            </div>
+        </ng-template>
+
+    </section>
+</main>

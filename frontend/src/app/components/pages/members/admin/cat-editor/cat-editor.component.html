@@ -1,0 +1,62 @@
+<section id="form" class="p-5 pt-4">
+    
+  <h1 class="pb-3 text-center">{{ !catId ? 'Add a new cat here' : 'Edit ' + cat?.name + ' here'}}</h1>
+
+    <section class="card border rounded shadow m-3 p-3">
+      <form *ngIf="editorForm" [formGroup]="editorForm" (ngSubmit)="saveCat()">
+        <div class="row row-cols-1 row-cols-md-3">
+          <div class="col mt-3">
+            <label for="nameInput" class="form-label">Name: </label>
+            <input type="text" class="form-control" id="nameInput" formControlName="name">
+            <small *ngIf="name.invalid && name.touched">Name is required.</small>
+          </div>
+
+          <div class="col mt-3">
+            <label for="sexInput" class="form-label">Sex: </label>
+            <small *ngIf="sex.invalid && sex.touched">You must choose sex.</small>
+            <select class="form-select" for="sexInput" formControlName="sex">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Neutered">Neutered</option>
+              </select>
+          </div>
+
+          <div class="col mt-3">
+            <label for="colorInput" class="form-label">Color: </label>
+            <small *ngIf="color.invalid && color.touched">You must choose color.</small>
+            <select class="form-select" id="colorInput" formControlName="color">
+              <option selected disabled>Choose color...</option>
+              <option *ngFor="let c of colors" [value]="c">{{ c }}</option>  
+            </select>
+          </div>
+
+          <div class="form-check mt-3 pt-3">
+            <input class="form-check-input ms-1 me-2" type="checkbox" value="" id="adoptableInput"
+            formControlName="adoptable"> 
+            <label class="form-check-label" for="adoptableInput">Adoptable</label>
+          </div>
+
+        </div>
+
+        <div class="mt-3">
+            <label for="descriptionInput" class="form-label">Description</label>
+            <textarea class="form-control" id="descriptionInput" formControlName="description" rows="3"></textarea>
+            <small *ngIf="description.invalid && description.touched">Description is required.</small>
+        </div>
+
+        <div class="mt-3">
+            <label for="imgUrlInput" class="form-label">Image url: </label>
+            <input type="text" class="form-control" id="imgUrlInput" formControlName="imgUrl">
+            <small *ngIf="imgUrl.invalid && imgUrl.touched">An image URL is required.</small>
+        </div>
+       
+
+        <div class="d-flex justify-content-evenly my-3 mt-4">
+          <button type="submit" class="btn btn-dark" [disabled]="editorForm.invalid || !editorForm.dirty">Save</button>
+          <button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
+        </div>
+
+      </form>
+    </section>
+
+  </section>

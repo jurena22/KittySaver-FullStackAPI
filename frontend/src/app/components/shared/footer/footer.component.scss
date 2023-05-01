@@ -1,0 +1,19 @@
+footer {
+    background-color: #4592AF;
+    color: #F6F5F5;
+    h4 {
+        color: #E3C4A8;
+    }
+    a {
+        color: #F6F5F5;
+        font-weight: 400;
+        &:hover {
+            color: #C92C6D;
+        }
+    }
+    li {
+        svg {
+            color: #33313B;
+        }
+    }
+}

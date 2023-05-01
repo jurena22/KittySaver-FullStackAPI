@@ -1,0 +1,136 @@
+<main>
+    <app-hero backgroundUrl="https://images.unsplash.com/photo-1580837853561-bf0ddcb4c068?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" titleText="Get involved. Take action."></app-hero>
+
+    <div class="container-fluid pt-3 m-0 px-0">
+        <div class="mx-5">
+            <h1 class="pb-3 border-bottom border-dark text-center">How can you help?</h1>
+        </div>
+
+        <section id="buttons" class="container px-5">
+            <div class="row gx-5 my-3">
+                <div class="col-md-6 col-lg-4 my-3">
+                    <div class="border rounded shadow p-5 text-center" (click)="goToCats()">
+                        <div>
+                            <img class="img-fluid"
+                                src="https://images.unsplash.com/photo-1570824103328-fc896d14912e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=458&q=80"
+                                alt="cat held in hand">
+                        </div>
+                        <div class="my-3">
+                            <h4>Adopt a cat</h4>
+                            <p class="text-uppercase">Show more</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-6 col-lg-4 my-3">
+                    <div class="border rounded shadow p-5 text-center" (click)="goToJoin('joinAfterInfo')">
+                        <div>
+                            <img class="img-fluid"
+                                src="https://images.unsplash.com/photo-1574227114640-234776e0d217?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=416&q=80"
+                                alt="cat touching hand">
+                        </div>
+                        <div class="my-3">
+                            <h4>Support us</h4>
+                            <p class="text-uppercase">Show more</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-4 my-3">
+                    <div class="border rounded shadow p-5 text-center" (click)="goToAbout()">
+                        <div>
+                            <img class="img-fluid"
+                                src="https://images.unsplash.com/photo-1587720571434-0d370e2c1444?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+                                alt="cat image on phone screen">
+                        </div>
+                        <div class="my-3">
+                            <h4>Read about us</h4>
+                            <p class="text-uppercase">Show more</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="memberInfo" class="container-fluid p-5">
+            <h2>Take action. Join and support us.</h2>
+            <div class="row py-3 ps-5 d-flex flex-row-reverse">
+                <div class="col-md-3">
+                    <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+                        alt="kitten raising paw" class="img-fluid">
+                </div>
+
+                <div class="col-md-9">
+                    <p>As a member, you can adopt a cat or donate our community.<br>
+                        Cat ipsum dolor sit amet, rub face on everything. Use lap as chair sleeps on my head so spill
+                        litter box, scratch at owner, destroy all furniture, especially couch. If human is on laptop
+                        sit on the keyboard climb into cupboard and lick the salt off rice cakes or stand in doorway,
+                        unwilling to chose whether to stay in or go out. Asdflkjaertvlkjasntvkjn (sits on keyboard)
+                        meowsiers or fall over dead (not really but gets sypathy) cat mojo.
+                        Ccccccccccccaaaaaaaaaaaaaaatttttttttttttttttssssssssssssssss.</p>
+                    <h4>Adopt a cat</h4>
+                    <p>Cat ipsum dolor sit amet, bengal tom. Savannah. Maine coon tiger and turkish angora yet
+                        bombay, for bobcat thai, or tabby. Norwegian forest. Singapura lion tabby mouser. Lynx
+                        abyssinian
+                        cornish rex and balinese cornish rex donskoy. Norwegian forest norwegian forest tom siamese
+                        balinese birman. Puma tiger. Munchkin thai scottish fold but devonshire rex cornish rex.
+                    <h4>Donate</h4>
+                    <p>Cat ipsum dolor sit amet, poop in the plant pot yet sleep over your phone and make cute
+                        snoring noises. Small kitty warm kitty little balls of fur eat an easter feather as if it were a
+                        bird then burp victoriously, but tender.
+                        What a cat-ass-trophy! scratch the postman wake up lick paw wake up owner meow meow but trip
+                        owner up in kitchen i want food and push your water glass on the floor if it fits, i sits yet
+                        jump on counter removed by human jump on counter again removed by human meow before jumping on
+                        counter this time to let the human know am coming back.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div id="joinAfterInfo">
+                <app-join-us></app-join-us>
+            </div>
+        </section>
+
+        <section id="sponsorInfo" class="container-fluid m-0 p-0 p-3">
+            <div class="p-3 px-5">
+                <h2 class="pb-3">Join us as a sponsor</h2>
+                <p class="ms-3">Suppost KittySaver as a sponsor. Snuggles up to shoulders or knees and purrs you to
+                    sleep. Get video posted to internet for chasing red dot do not try to mix old food with new one to
+                    fool me! meowzer attack the dog then pretend like nothing happened. Lick left leg for ninety
+                    minutes, still dirty paw your face to wake you up in the morning so meow meow pee in shoe cats go
+                    for world domination.
+                </p>
+                <h4 class="my-3 ms-3">If you have any questions</h4>
+
+                <div class="ms-3">
+                    <p>
+                        <button class="btn btn-secondary m-3" type="button" data-bs-toggle="collapse" data-bs-target="#partners"
+                            aria-expanded="false" aria-controls="partners">See our partners</button>
+                        <button class="btn btn-secondary m-3" type="button" (click)="goToLogin()">Contact us</button>
+                    </p>
+                    <div class="row row-cols-1 row-cols-md-2">
+                        <div class="col">
+                            <div class="collapse multi-collapse" id="partners">
+                                <div class="card-body">
+                                    <h4 class="text-center py-3 border-bottom border-light">Our community sponsors</h4>
+                                    <ul class="mt-3 ms-5" *ngIf="partnerList.length > 0">
+                                        <li *ngFor="let partner of partnerList" class="my-3">
+                                            <span class="me-1"><img [src]="partner.imgUrl" alt="partnerLogo"></span>
+                                            {{partner.name}}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+</main>

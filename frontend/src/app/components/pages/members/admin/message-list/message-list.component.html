@@ -1,0 +1,38 @@
+<section class="p-5 pt-4">
+
+  <div *ngIf="messages.length > 0; else elseBlock" class="card border rounded shadow m-3 p-3 table-responsive-md">
+    <table class="table table-bordered table-sm">
+      <thead>
+        <tr class="table-secondary">
+          <th scope="col">#</th>
+          <th scope="col">Sender</th>
+          <th scope="col">Opened</th>
+          <th scope="col">Text</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let message of messages; let i=index" [ngClass]="{'table-danger': !message.opened}">
+          <th scope="row">{{ i+1 }}</th>
+          <td>{{ getSender(message.sender) }}</td>
+          <td>{{ message.opened ? "YES" : "NO" }}</td>
+          <td>{{ message.messageText }}</td>
+
+          <td class="d-flex flex-row">
+            <button class="btn btn-dark m-3" (click)="openMessage(message)" [disabled]="message.opened">Mark as opened</button>
+
+          </td>
+
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #elseBlock>
+    <div class="container p-5 text-center">
+        <h2 class="lead">Sorry, you have no new messages from other users.</h2>
+    </div>
+</ng-template>
+
+</section>

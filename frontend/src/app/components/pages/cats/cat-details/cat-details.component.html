@@ -1,0 +1,26 @@
+<main class="container d-flex justify-content-center text-center p-3">
+    <div class="d-flex flex-column flex-md-row">
+        <div class="m-3 mt-4">
+            <img [src]="cat?.imgUrl" class="img-fluid rounded" [alt]="cat?.name" />
+        </div>
+        <div class="text-center text-md-start mx-3 mt-4">
+            <h2 class="text-large">{{cat?.name}}</h2>
+            <h6>Sex: {{cat?.sex | lowercase}}</h6>
+            <h6>Color: {{cat?.color}}</h6>
+            <h6>Adoptable: {{ cat?.adoptable ? "YES" : "NO" }}</h6>
+            <p>{{cat?.description}}</p>
+            <div class="d-inline-flex flex-column">
+                <button class="btn btn-light my-2" (click)="goToLoginAndSaveCat()">
+                    Help this cat 
+                    <span>
+                        <img src="../../../../assets/images/kcm_logo_thumbnail.png" style="width: 30px;"
+                            alt="logo">
+                    </span>
+                </button>
+
+                <button class="btn btn-dark my-2" (click)="navigateBackToCats()">Back to other owner hunters</button>
+            </div>
+
+        </div>
+    </div>
+</main>

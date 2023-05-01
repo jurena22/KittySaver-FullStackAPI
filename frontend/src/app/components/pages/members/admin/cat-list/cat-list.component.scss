@@ -1,0 +1,21 @@
+#addBtn {
+    background-color: #332C39;
+    &:hover {
+        color: #C92C6D;
+    }
+
+}
+
+#deleteBtn {
+    &:hover {
+        color: #C92C6D;
+    }
+}
+
+#updateBtn {
+    background-color: #C92C6D;
+    &:hover {
+        color: #332C39;
+    }
+
+}

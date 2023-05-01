@@ -1,0 +1,22 @@
+<main>
+    <div class="container pt-3">
+        <div>
+            <h1 class="pb-3 border-bottom border-dark text-center">Welcome {{user?.name}}!</h1>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-2 p-3">
+            <div class="col mb-3">
+                <h3>Contact us</h3>
+                <p>Write us if you would like to support our mission.</p>
+                <app-contact-form></app-contact-form>
+            </div>
+
+            <div class="col mb-3">
+                <h3>Your profile</h3>
+                <p>See and edit your profile.</p>
+                <app-profile [userId]="userId"></app-profile>
+            </div>
+            
+        </div>
+    </div>
+</main>

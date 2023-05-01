@@ -1,0 +1,53 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light shadow">
+      
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" >
+        <img src="../../../../assets/images/kcm_logo_thumbnail.png" alt="Kittysaver logo" width="30" height="30" class="d-inline-block align-text-top">
+        Kittysaver
+      </a>
+     
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+           <ng-container *ngFor="let navElement of navLinkArray">
+               <li class="nav-item mx-2">
+                 <a class="nav-link" [routerLink]="navElement.routerLink">{{navElement.name | uppercase}}</a>
+               </li>
+           </ng-container> 
+
+           <div *ngIf="user; then thenBlock else elseBlock"></div>
+              <ng-template #thenBlock>
+                <div *ngIf="user?.role === 'MEMBER'; then forMemberBlock else forAdminBlock"></div>
+                <ng-template #forMemberBlock>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" routerLink="members">MY PAGE</a>
+                   </li>
+                </ng-template>
+                <ng-template #forAdminBlock>
+                  <li *ngIf="user?.role==='ADMIN'" class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      ADMIN 
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" routerLink="members">My page</a></li>
+                      <li><a class="dropdown-item" routerLink="catList">Cats</a></li>
+                      <li><a class="dropdown-item" routerLink="memberList">Members</a></li>
+                      <li><a class="dropdown-item" routerLink="messageList">Messages</a></li>
+                    </ul>
+                  </li>            
+                </ng-template>
+                
+              </ng-template>
+              <ng-template #elseBlock>
+                <li class="nav-item mx-2">
+                  <a class="nav-link" routerLink="login">FOR MEMBERS</a>
+                </li> 
+              </ng-template>
+        </ul>
+        
+      </div>
+    </div>
+  </nav>

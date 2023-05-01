@@ -1,0 +1,29 @@
+section {
+    background-color: #332C39;
+    color: #F0EEED;
+}
+
+button:hover, small {
+    color: #C92C6D;
+}
+
+#senderInput {
+    color: #F0EEED;
+}
+
+//customized input fields
+input, textarea {
+    &:focus {
+        box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(201, 44, 109, 0.45);
+        border: 1px solid #ffffffa6;
+    }
+
+    &:checked {
+        border: 1px solid #ffffffa6;
+        background-color: #C92C6D;
+    }
+
+    &:active {
+        background-color: #C92C6D;
+    }
+}
