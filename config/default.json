@@ -1,0 +1,13 @@
+{
+    "port": 3000,
+    "log_level_file": "debug",
+    "log_level_console": "info",
+
+    "database": {
+        "user": "renci",
+        "password": "rcfnIqkQOKKauqp6",
+        "host": "vizsgaremek.9hjeeej.mongodb.net/kittySaver?retryWrites=true&w=majority"
+    }
+}
+
+
